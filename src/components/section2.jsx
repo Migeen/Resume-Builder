@@ -1,5 +1,4 @@
 import React from 'react';
-import Title from './section2/title';
 
 const Section2 = () => {
   return (

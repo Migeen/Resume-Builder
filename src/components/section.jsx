@@ -45,7 +45,7 @@ const Section = () => {
         <Heading />
         <Body generalInfo={generalInfo} onInputChange={handleInputChange} />
       </div>
-      <div className='bg-green-300 h-screen w-full flex flex-col items-center'>
+      <div className='bg-gray-300 h-screen w-full flex flex-col items-center'>
         <Title generalInfo={generalInfo} />
         <Education generalInfo={generalInfo}/>
         <Experience generalInfo={generalInfo}/>

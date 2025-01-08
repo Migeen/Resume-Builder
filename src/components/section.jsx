@@ -1,10 +1,10 @@
 import React from 'react';
-import Heading from './heading';
 import Body from './body';
 import Title from './section/title';
 import { useState } from 'react';
 import Education from './section/Education';
 import Experience from './section/experience';
+import Nav from './section/Nav';
 
 
 
@@ -40,12 +40,12 @@ const Section = () => {
     }));
   };
   return (
-    <div className='h-full w-full bg-gray-100 flex flex-row p-10 gap-10'>
-      <div className='bg-white-200 h-full w-2/4 flex flex-col'>
-        <Heading />
+    <div className='h-full w-full bg-gray-100 flex flex-row'>
+      <div className='bg-white-200 h-full w-2/5 flex'>
+      <Nav/>
         <Body generalInfo={generalInfo} onInputChange={handleInputChange} />
       </div>
-      <div className='bg-gray-300 h-screen w-full flex flex-col items-center'>
+      <div className='bg-gray-300 h-screen w-3/5 flex flex-col items-center'>
         <Title generalInfo={generalInfo} />
         <Education generalInfo={generalInfo}/>
         <Experience generalInfo={generalInfo}/>

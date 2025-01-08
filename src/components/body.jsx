@@ -3,7 +3,8 @@ import React from 'react';
 const Body = ({ generalInfo, onInputChange }) => {
 
   return (
-    <div className='w-full h-full rounded-md bg-gray-100 flex flex-col items-center border-y-4 border-violet-500 shadow-lg'>
+    <div className='w-full h-full bg-white flex flex-col items-center  '>
+      
       <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
         <h1 className='font-bold text-2xl font-mono text-violet-600'>General Information:</h1>
         <input name='firstname' value={generalInfo.firstname} onChange={onInputChange} className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4

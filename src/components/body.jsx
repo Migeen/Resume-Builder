@@ -1,47 +1,101 @@
 import React from 'react';
+import Social from './section/Social';
+import { IoIosArrowForward } from 'react-icons/io';
 
-const Body = ({ generalInfo, onInputChange }) => {
+const Body = ({ generalInfo, onInputChange, activeSection }) => {
 
   return (
-    <div className='w-full h-full bg-white flex flex-col items-center  '>
-      
-      <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
-        <h1 className='font-bold text-2xl font-mono text-violet-600'>General Information:</h1>
-        <input name='firstname' value={generalInfo.firstname} onChange={onInputChange}
-         className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='First Name' />
-        <input name='lastname' value={generalInfo.lastname} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Last Name' />
-        <input name='contact' value={generalInfo.contact} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Contact No' />
-        <input name='email' value={generalInfo.email} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Email' />
-        <input name='address' value={generalInfo.address} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Address' />
+    <div className='w-full h-screen bg-white flex flex-col items-center  '>
+
+      {activeSection === 'about' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-10'>
+        <div className='w-full h-auto'>
+          <h1 className='font-extrabold text-4xl font-mono text-sky-500'>About yourself</h1>
+          <p className='text-gray-600'>Fill out your primary Information</p>
+        </div>
+        <div className='flex flex-wrap gap-4'>
+          <div className='flex flex-col gap-1 mt-4'>
+            <label htmlFor="" className='text-gray-400 text-md'>First Name</label>
+            <input name='firstname' value={generalInfo.firstname} onChange={onInputChange}
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='flex flex-col gap-1 mt-4'>
+            <label htmlFor="" className='text-gray-400 text-md'>Last Name</label>
+            <input name='lastname' value={generalInfo.lastname} onChange={onInputChange}
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='flex flex-col gap-1 w-full mt-4'>
+            <label htmlFor="" className='text-gray-400 text-md'>Designation</label>
+            <input name='designation' value={generalInfo.designation} onChange={onInputChange}
+              className='w-full p-3 h-12 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='flex flex-col gap-1 mt-4'>
+            <label htmlFor="" className='text-gray-400 text-md'>Address</label>
+            <input name='address' value={generalInfo.address} onChange={onInputChange}
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='flex flex-col gap-1 mt-4'>
+            <label htmlFor="" className='text-gray-400 text-md'>City</label>
+            <input name='city' value={generalInfo.city} onChange={onInputChange}
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='flex flex-col gap-1 mt-4'>
+            <label htmlFor="" className='text-gray-400 text-md'>Email</label>
+            <input name='email' value={generalInfo.email} onChange={onInputChange}
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='flex flex-col gap-1 mt-4'>
+            <label htmlFor="" className='text-gray-400 text-md'>Phone</label>
+            <input name='contact' value={generalInfo.contact} onChange={onInputChange}
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='flex flex-col gap-1 w-full mt-5'>
+            <label htmlFor="" className='text-gray-400 text-md'>Summary</label>
+            <textarea name='Description' value={generalInfo.Description} onChange={onInputChange}
+              className='w-full p-3 h-20 rounded-md bg-gray-100'
+              type="text" />
+          </div>
+          <div className='w-full gap-1'>
+            <Social/>
+            <button className='text-sky-500 mt-3'>+ Add Social Link</button>
+          </div>
+          <div className='w-full flex justify-between mt-5'>
+           <button className='w-[100px] h-12 border border-black rounded-md hover:bg-black hover:text-white duration-200'>
+            Back
+            </button>
+            <button className='w-[200px] h-12 text-white bg-sky-500 rounded-md flex justify-between items-center px-2 hover:bg-black hover:text-white duration-200'>
+            Continue to Education
+            <IoIosArrowForward/>
+            </button> 
+          </div>
+        </div>
       </div>
-      <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
+      }
+      {activeSection === 'education' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
         <h1 className='font-bold text-2xl font-mono text-violet-600'>Education:</h1>
-        <input name='school' value={generalInfo.school} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
+        <input name='school' value={generalInfo.school} onChange={onInputChange}
+          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
          placeholder:text-lg placeholder:font-semibold' type="text" placeholder='School' />
-        <input name='degree' value={generalInfo.degree} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
+        <input name='degree' value={generalInfo.degree} onChange={onInputChange}
+          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
          placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Degree' />
-        <input name='startDate' value={generalInfo.startDate} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
+        <input name='startDate' value={generalInfo.startDate} onChange={onInputChange}
+          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
          placeholder:text-lg placeholder:font-semibold' type="date" placeholder='Start-Date' />
-        <input name='endDate' value={generalInfo.endDate} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
+        <input name='endDate' value={generalInfo.endDate} onChange={onInputChange}
+          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
          placeholder:text-lg placeholder:font-semibold' type="date" placeholder='End-Date' />
-        <input name='Slocation' value={generalInfo.Slocation} onChange={onInputChange} 
-        className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
+        <input name='Slocation' value={generalInfo.Slocation} onChange={onInputChange}
+          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
          placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Location' />
-      </div>
-      <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
+      </div>}
+      {activeSection === 'experience' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
         <h1 className='font-bold text-2xl font-mono text-violet-600'>Experience:</h1>
         <input name='company' value={generalInfo.company} onChange={onInputChange} className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
          placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Company' />
@@ -55,7 +109,7 @@ const Body = ({ generalInfo, onInputChange }) => {
          placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Location' />
         <textarea name="Description" value={generalInfo.Description} onChange={onInputChange} id="des" placeholder='Description' className='w-4/5 p-3 h-28 border-2 border-gray-400 rounded-lg placeholder:tracking-wider
          placeholder:ml-4 placeholder:text-lg'></textarea>
-      </div>
+      </div>}
     </div>
   );
 }

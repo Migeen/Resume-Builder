@@ -3,10 +3,7 @@ import { GoPerson, GoRocket } from 'react-icons/go'
 import { IoSchoolOutline } from 'react-icons/io5'
 import { PiLightbulbLight, PiSuitcaseSimpleLight } from 'react-icons/pi'
 
-const Nav = () => {
-
-    const [navigate, setNavigate] = useState();
-
+const Nav = ({onNavigate}) => {
 
     return (
 
@@ -14,16 +11,20 @@ const Nav = () => {
             <nav className='w-1/6 h-auto bg-white border border-gray-200 '>
                 <ul className=' flex flex-col p-3 pt-8 gap-8'>
                     <li className='w-[82px] h-[82px] bg-sky-50 active:bg-blue-500 active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
-                     cursor-pointer rounded-2xl items-center justify-center py-4 gap-1 '>
+                     cursor-pointer rounded-2xl items-center justify-center py-4 gap-1 '
+                     onClick={() => onNavigate('about')}
+                     >
                         <GoPerson className='w-7 h-7' />
                         <p className='text-xs'>About</p>
                     </li>
                     <li className='bg-sky-50 w-[82px] h-[82px] active:bg-blue-500 active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
-                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '
+                     onClick={() => onNavigate('education')}
+                     >
                         <IoSchoolOutline className='w-7 h-7'/>
                         <p className='text-xs'>Education</p>
                     </li>
-                    <li className='bg-sky-50 active:bg-blue-500 w-[82px] h-[82px] active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
+                    <li onClick={() => onNavigate('experience')} className='bg-sky-50 active:bg-blue-500 w-[82px] h-[82px] active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
                      cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
                         <PiSuitcaseSimpleLight className='w-7 h-7'/>
                         <p className='text-xs'>Experience</p>

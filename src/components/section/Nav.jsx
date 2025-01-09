@@ -1,41 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GoPerson, GoRocket } from 'react-icons/go'
 import { IoSchoolOutline } from 'react-icons/io5'
 import { PiLightbulbLight, PiSuitcaseSimpleLight } from 'react-icons/pi'
 
 const Nav = () => {
 
+    const [navigate, setNavigate] = useState();
 
 
     return (
 
         <>
             <nav className='w-1/6 h-auto bg-white border border-gray-200 '>
-                <ul className=' flex flex-col p-5 gap-10'>
-                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
-                     cursor-pointer rounded-2xl items-center justify-center p-4 gap-2 '>
-                        <GoPerson className='w-10 h-10' />
-                        <p className='text-sm'>About</p>
+                <ul className=' flex flex-col p-3 pt-8 gap-8'>
+                    <li className='w-[82px] h-[82px] bg-sky-50 active:bg-blue-500 active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 gap-1 '>
+                        <GoPerson className='w-7 h-7' />
+                        <p className='text-xs'>About</p>
                     </li>
-                    <li className='bg-sky-50 text-green-600 hover:bg-nGray duration-300 active:bg-blue-500 active:text-white ease-in-out flex flex-col
-                     cursor-pointer rounded-2xl items-center justify-center p-4 gap-2'>
-                        <IoSchoolOutline className='w-10 h-10'/>
-                        <p className='text-sm'>Education</p>
+                    <li className='bg-sky-50 w-[82px] h-[82px] active:bg-blue-500 active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <IoSchoolOutline className='w-7 h-7'/>
+                        <p className='text-xs'>Education</p>
                     </li>
-                    <li className='bg-sky-50 text-green-600 hover:bg-nGray duration-300 ease-in-out active:bg-blue-500 active:text-white flex flex-col
-                     cursor-pointer rounded-2xl items-center justify-center p-4 gap-2'>
-                        <PiSuitcaseSimpleLight className='w-10 h-10'/>
-                        <p className='text-sm'>Experience</p>
+                    <li className='bg-sky-50 active:bg-blue-500 w-[82px] h-[82px] active:text-white text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <PiSuitcaseSimpleLight className='w-7 h-7'/>
+                        <p className='text-xs'>Experience</p>
                     </li>
-                    <li className='bg-sky-50 text-green-600 hover:bg-nGray active:bg-blue-500 active:text-white duration-300 ease-in-out flex flex-col
-                     cursor-pointer rounded-2xl items-center justify-center p-4 gap-2'>
-                        <GoRocket className='w-10 h-10'/>
-                        <p className='text-sm'>Projects</p>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white w-[82px] h-[82px] text-green-600 hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <GoRocket className='w-7 h-7'/>
+                        <p className='text-xs'>Projects</p>
                     </li>
-                    <li className='bg-sky-50 text-green-600 active:bg-blue-500 active:text-white hover:bg-nGray duration-300 ease-in-out flex flex-col
-                     cursor-pointer rounded-2xl items-center justify-center p-4 gap-2'>
-                        <PiLightbulbLight className='w-10 h-10'/>
-                        <p className='text-sm'>Skills</p>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 w-[82px] h-[82px] hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <PiLightbulbLight className='w-7 h-7'/>
+                        <p className='text-xs'>Skills</p>
                     </li>
                 </ul>
             </nav>

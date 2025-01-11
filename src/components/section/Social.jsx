@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 
-const Social = ({id, openDropdown, setOpenDropdown}) => {
+const Social = ({id, openDropdown, setOpenDropdown, onDelete}) => {
 
     const social = ['Facebook', 'Twitter', 'LinkedIn', 'Github', 'Dribble', 'Medium', 'Instagram'];
     const [selectedSocial, setSelectedSocial] = useState('Facebook'); // Keep track of selected item
@@ -54,7 +54,7 @@ const Social = ({id, openDropdown, setOpenDropdown}) => {
                     type="text" />
             </div>
             <button className='w-1/12 h-[72px] flex pt-8 justify-center'>
-                <RiDeleteBin6Line size={18} color='gray' />
+                <RiDeleteBin6Line size={18} onClick={onDelete} color='gray' />
             </button>
         </div>
     )

@@ -51,7 +51,7 @@ const Section = () => {
     <div className='h-full w-full bg-gray-100 flex flex-row'>
       <div className='bg-white-200 h-full w-2/5 flex'>
       <Nav onNavigate={handleNavClick} />
-        <Body generalInfo={generalInfo} onInputChange={handleInputChange} activeSection={activeSection} />
+        <Body generalInfo={generalInfo} onInputChange={handleInputChange} onNavigate={handleNavClick} activeSection={activeSection} />
       </div>
       <div className='bg-gray-300 h-screen w-3/5 flex flex-col items-center'>
         <Title generalInfo={generalInfo} />

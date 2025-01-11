@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import Social from './section/Social';
 import { IoIosArrowForward } from 'react-icons/io';
 
-const Body = ({ generalInfo, onInputChange, activeSection }) => {
+const Body = ({ generalInfo, onInputChange, activeSection, onNavigate }) => {
 
-  const [count, setCount] = useState(2);
-  const [openDropdown, setOpenDropdown] = useState(null); // Tracks the currently open dropdown
+  const [socials, setSocials] = useState([{ id: 1 }]); // Initial list with one Social component  const addSocial = () => {
 
-  const handleAddSocialLink = () => {
-    setCount((prevCount) => prevCount + 1);
+  const addSocial = () => {
+    setSocials((prev) => [...prev, { id: prev.length + 1 }]);
+  };
+
+
+  const [openDropdown, setOpenDropdown] = useState(false); // Tracks the currently open dropdown
+  const removeSocial = (id) => {
+    setSocials((prev) => prev.filter((social) => social.id !== id)); // Remove the component by ID
   };
 
   return (
@@ -69,17 +74,18 @@ const Body = ({ generalInfo, onInputChange, activeSection }) => {
               type="text" />
           </div>
           <div className='w-full gap-1'>
-            {Array.from({ length: count }).map((_, index) => (
-              <Social 
-              key={index}
-              id={index}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
+            {socials.map((social) => (
+              <Social
+                key={social.id}
+                id={social.id}
+                openDropdown={openDropdown}
+                setOpenDropdown={setOpenDropdown}
+                onDelete={() => removeSocial(social.id)} // Pass the delete function
               />
             ))}
             <button
               className='text-sky-500 mt-3'
-              onClick={handleAddSocialLink}
+              onClick={addSocial}
             >
               + Add Social Link
             </button>
@@ -88,7 +94,11 @@ const Body = ({ generalInfo, onInputChange, activeSection }) => {
             <button className='w-[100px] h-12 border border-black rounded-md hover:bg-black hover:text-white duration-200'>
               Back
             </button>
-            <button className='w-[220px] h-12 gap-4 text-white bg-sky-500 rounded-md flex justify-center items-center px-2 hover:bg-black hover:text-white duration-200'>
+            <button
+              className='w-[220px] h-12 gap-4 text-white bg-sky-500 rounded-md flex justify-center items-center px-2 hover:bg-black
+             hover:text-white duration-200'
+              onClick={() => onNavigate('education')}
+            >
               Continue to Education
               <IoIosArrowForward />
             </button>

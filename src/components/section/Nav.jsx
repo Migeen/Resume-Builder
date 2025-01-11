@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
-import { GoPerson, GoRocket } from 'react-icons/go'
+import { CiShare2 } from 'react-icons/ci'
+import { FaLanguage } from 'react-icons/fa'
+import { GoPerson, GoRocket, GoTrophy } from 'react-icons/go'
 import { IoSchoolOutline } from 'react-icons/io5'
-import { PiLightbulbLight, PiSuitcaseSimpleLight } from 'react-icons/pi'
+import { LuAward } from 'react-icons/lu'
+import { PiCertificateLight, PiLightbulbLight, PiSuitcaseSimpleLight } from 'react-icons/pi'
+import { VscReferences } from 'react-icons/vsc'
 
 const Nav = ({onNavigate}) => {
 
@@ -39,6 +43,37 @@ const Nav = ({onNavigate}) => {
                         <PiLightbulbLight className='w-7 h-7'/>
                         <p className='text-xs'>Skills</p>
                     </li>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 w-[82px] h-[82px] hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <GoTrophy className='w-7 h-7'/>
+                        <p className='text-xs'>Achievements</p>
+                    </li>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 w-[82px] h-[82px] hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <PiCertificateLight className='w-7 h-7'/>
+                        <p className='text-xs'>Training</p>
+                    </li>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 w-[82px] h-[82px] hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <LuAward className='w-7 h-7'/>
+                        <p className='text-xs'>Awards</p>
+                    </li>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 w-[82px] h-[82px] hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <FaLanguage className='w-7 h-7'/>
+                        <p className='text-xs'>Language</p>
+                    </li>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 w-[82px] h-[82px] hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <VscReferences className='w-7 h-7'/>
+                        <p className='text-xs'>Reference</p>
+                    </li>
+                    <li className='bg-sky-50 active:bg-blue-500 active:text-white text-green-600 w-[82px] h-[82px] hover:bg-nGray duration-300 ease-in-out flex flex-col
+                     cursor-pointer rounded-2xl items-center justify-center py-4 px-2 gap-1 '>
+                        <CiShare2 className='w-7 h-7'/>
+                        <p className='text-xs'>Share CV</p>
+                    </li>
+                    
                 </ul>
             </nav>
         </>

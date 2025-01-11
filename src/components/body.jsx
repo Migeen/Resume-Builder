@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Social from './section/Social';
 import { IoIosArrowForward } from 'react-icons/io';
 
 const Body = ({ generalInfo, onInputChange, activeSection }) => {
 
+  const [count, setCount] = useState(2);
+  const [openDropdown, setOpenDropdown] = useState(null); // Tracks the currently open dropdown
+
+  const handleAddSocialLink = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
   return (
-    <div className='w-full h-screen bg-white flex flex-col items-center  '>
+    <div className='w-full h-full bg-white flex flex-col items-center'>
 
       {activeSection === 'about' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-10'>
         <div className='w-full h-auto'>
@@ -62,17 +69,29 @@ const Body = ({ generalInfo, onInputChange, activeSection }) => {
               type="text" />
           </div>
           <div className='w-full gap-1'>
-            <Social/>
-            <button className='text-sky-500 mt-3'>+ Add Social Link</button>
+            {Array.from({ length: count }).map((_, index) => (
+              <Social 
+              key={index}
+              id={index}
+              openDropdown={openDropdown}
+              setOpenDropdown={setOpenDropdown}
+              />
+            ))}
+            <button
+              className='text-sky-500 mt-3'
+              onClick={handleAddSocialLink}
+            >
+              + Add Social Link
+            </button>
           </div>
           <div className='w-full flex justify-between mt-5'>
-           <button className='w-[100px] h-12 border border-black rounded-md hover:bg-black hover:text-white duration-200'>
-            Back
+            <button className='w-[100px] h-12 border border-black rounded-md hover:bg-black hover:text-white duration-200'>
+              Back
             </button>
-            <button className='w-[200px] h-12 text-white bg-sky-500 rounded-md flex justify-between items-center px-2 hover:bg-black hover:text-white duration-200'>
-            Continue to Education
-            <IoIosArrowForward/>
-            </button> 
+            <button className='w-[220px] h-12 gap-4 text-white bg-sky-500 rounded-md flex justify-center items-center px-2 hover:bg-black hover:text-white duration-200'>
+              Continue to Education
+              <IoIosArrowForward />
+            </button>
           </div>
         </div>
       </div>

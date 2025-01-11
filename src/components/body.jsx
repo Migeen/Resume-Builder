@@ -28,49 +28,49 @@ const Body = ({ generalInfo, onInputChange, activeSection, onNavigate }) => {
           <div className='flex flex-col gap-1 mt-4'>
             <label htmlFor="" className='text-gray-400 text-md'>First Name</label>
             <input name='firstname' value={generalInfo.firstname} onChange={onInputChange}
-              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='flex flex-col gap-1 mt-4'>
             <label htmlFor="" className='text-gray-400 text-md'>Last Name</label>
             <input name='lastname' value={generalInfo.lastname} onChange={onInputChange}
-              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='flex flex-col gap-1 w-full mt-4'>
             <label htmlFor="" className='text-gray-400 text-md'>Designation</label>
             <input name='designation' value={generalInfo.designation} onChange={onInputChange}
-              className='w-full p-3 h-12 rounded-md bg-gray-100'
+              className='w-full p-3 h-12 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='flex flex-col gap-1 mt-4'>
             <label htmlFor="" className='text-gray-400 text-md'>Address</label>
             <input name='address' value={generalInfo.address} onChange={onInputChange}
-              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='flex flex-col gap-1 mt-4'>
             <label htmlFor="" className='text-gray-400 text-md'>City</label>
             <input name='city' value={generalInfo.city} onChange={onInputChange}
-              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='flex flex-col gap-1 mt-4'>
             <label htmlFor="" className='text-gray-400 text-md'>Email</label>
             <input name='email' value={generalInfo.email} onChange={onInputChange}
-              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='flex flex-col gap-1 mt-4'>
             <label htmlFor="" className='text-gray-400 text-md'>Phone</label>
             <input name='contact' value={generalInfo.contact} onChange={onInputChange}
-              className='w-[300px] p-3 h-12 rounded-md bg-gray-100'
+              className='w-[300px] p-3 h-12 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='flex flex-col gap-1 w-full mt-5'>
             <label htmlFor="" className='text-gray-400 text-md'>Summary</label>
             <textarea name='Description' value={generalInfo.Description} onChange={onInputChange}
-              className='w-full p-3 h-20 rounded-md bg-gray-100'
+              className='w-full p-3 h-20 rounded-md bg-gray-100 focus:outline-none focus:border-b-2 focus:border-sky-500 focus:rounded-b-none'
               type="text" />
           </div>
           <div className='w-full gap-1'>
@@ -106,8 +106,11 @@ const Body = ({ generalInfo, onInputChange, activeSection, onNavigate }) => {
         </div>
       </div>
       }
-      {activeSection === 'education' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
-        <h1 className='font-bold text-2xl font-mono text-violet-600'>Education:</h1>
+      {activeSection === 'education' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-10'>
+        <div className='w-full h-auto'>
+          <h1 className='font-extrabold text-4xl font-mono text-sky-500'>About yourself</h1>
+          <p className='text-gray-600'>Fill out your primary Information</p>
+        </div>
         <input name='school' value={generalInfo.school} onChange={onInputChange}
           className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
          placeholder:text-lg placeholder:font-semibold' type="text" placeholder='School' />

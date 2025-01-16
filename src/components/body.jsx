@@ -109,24 +109,12 @@ const Body = ({ generalInfo, onInputChange, activeSection, onNavigate }) => {
       {activeSection === 'education' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-10'>
         <div className='w-full h-auto'>
           <h1 className='font-extrabold text-4xl font-mono text-sky-500'>About yourself</h1>
-          <p className='text-gray-600'>Fill out your primary Information</p>
+          <p className='text-gray-600'>Give a detailed look into your academic history</p>
+          <div className=''>
+
+          </div>
         </div>
-        <input name='school' value={generalInfo.school} onChange={onInputChange}
-          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='School' />
-        <input name='degree' value={generalInfo.degree} onChange={onInputChange}
-          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Degree' />
-        <input name='startDate' value={generalInfo.startDate} onChange={onInputChange}
-          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="date" placeholder='Start-Date' />
-        <input name='endDate' value={generalInfo.endDate} onChange={onInputChange}
-          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="date" placeholder='End-Date' />
-        <input name='Slocation' value={generalInfo.Slocation} onChange={onInputChange}
-          className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
-         placeholder:text-lg placeholder:font-semibold' type="text" placeholder='Location' />
-      </div>}
+       </div>}
       {activeSection === 'experience' && <div className='w-full h-auto px-5 py-8 flex flex-col gap-8 items-center'>
         <h1 className='font-bold text-2xl font-mono text-violet-600'>Experience:</h1>
         <input name='company' value={generalInfo.company} onChange={onInputChange} className='w-4/5 p-3 h-10 border-gray-400 border-2 rounded-lg placeholder:tracking-wider placeholder:ml-4
